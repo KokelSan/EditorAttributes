@@ -4,12 +4,12 @@ using EditorAttributes.Editor.Utility;
 
 namespace EditorAttributes.Editor
 {
-	[CustomPropertyDrawer(typeof(ShowFieldAttribute))]
-    public class ShowFieldDrawer : PropertyDrawerBase
+	[CustomPropertyDrawer(typeof(ShowIfAttribute))]
+    public class ShowIfDrawer : PropertyDrawerBase
     {
 		public override VisualElement CreatePropertyGUI(SerializedProperty property)
 		{
-			var showAttribute = attribute as ShowFieldAttribute;
+			var showAttribute = attribute as ShowIfAttribute;
 			var conditionalProperty = ReflectionUtility.GetValidMemberInfo(showAttribute.ConditionName, property);
 
 			var root = new VisualElement();

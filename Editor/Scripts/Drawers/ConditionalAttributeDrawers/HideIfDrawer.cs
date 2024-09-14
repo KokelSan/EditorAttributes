@@ -4,12 +4,12 @@ using EditorAttributes.Editor.Utility;
 
 namespace EditorAttributes.Editor
 {
-	[CustomPropertyDrawer(typeof(HideFieldAttribute))]
-    public class HideFieldDrawer : PropertyDrawerBase
+	[CustomPropertyDrawer(typeof(HideIfAttribute))]
+    public class HideIfDrawer : PropertyDrawerBase
     {
 		public override VisualElement CreatePropertyGUI(SerializedProperty property)
 		{
-			var hideAttribute = attribute as HideFieldAttribute;
+			var hideAttribute = attribute as HideIfAttribute;
 			var conditionalProperty = ReflectionUtility.GetValidMemberInfo(hideAttribute.ConditionName, property);
 
 			var root = new VisualElement();
